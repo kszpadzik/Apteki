@@ -89,7 +89,6 @@ def pisanie_danych_naklejki(c, x, y, dane, apteka):
     # Ramka na dane apteki (4 linijki) + 1 linia
     c.line(x, y+ przesuniecie_y, x + SZER_NAKLEJKI, y+ przesuniecie_y)
     przesuniecie_y -= wysokosc_linijki
-    print(przesuniecie_y+y)
     c.drawString(x + 5, y + przesuniecie_y, apteka.get('nazwa', ''))
     c.drawString(x + 5, y + przesuniecie_y - wysokosc_linijki, apteka.get('adres_ul', ''))
     c.drawString(x + 5, y + przesuniecie_y - 2 * wysokosc_linijki, apteka.get('adres_kod', ''))
@@ -99,7 +98,6 @@ def pisanie_danych_naklejki(c, x, y, dane, apteka):
     przesuniecie_y = przesuniecie_y - 4 * wysokosc_linijki
     c.line(x, y+przesuniecie_y, x + SZER_NAKLEJKI, y+ przesuniecie_y)
     przesuniecie_y -= wysokosc_linijki
-    print(przesuniecie_y, przesuniecie_y-wysokosc_linijki, przesuniecie_y-2*wysokosc_linijki)
     for line in dane.get('Lek', ['', '', '']):
         c.drawString(x + 5, y + przesuniecie_y, line)
         przesuniecie_y -= wysokosc_linijki
@@ -161,8 +159,8 @@ def main():
     parser.add_argument('--p', type=str, default='', help='Pojedyńcze pole do wypełnienia. Sposób przechowywania leku.')
     parser.add_argument('--s', type=str, default='', help='Pojedyńcze pole do wypełnienia. Sposób użycia leku.')
     parser.add_argument('--ds', type=str, default='', help='Pojedyńcze pole do wypełnienia. Sposób stosowania leku.')
-    parser.add_argument('--pos_start', type=int, default=1, help='Pojedyńcze pole do wypełnienia. Numer pierwszej naklejki, jaka ma być zmieniana.')
-    parser.add_argument('--pos_koniec', type=int, default=ETYKIETY_PER_PAGE, help='Pojedyńcze pole do wypełnienia. Numer ostatniej naklejki, jaka ma być zmieniana.')
+    parser.add_argument('--pos_start', type=int, default=None, help='Pojedyńcze pole do wypełnienia. Numer pierwszej naklejki, jaka ma być zmieniana.')
+    parser.add_argument('--pos_koniec', type=int, default=None, help='Pojedyńcze pole do wypełnienia. Numer ostatniej naklejki, jaka ma być zmieniana.')
     parser.add_argument('--reset', action='store_true', help='Brak pola do wypełnienia. Wyczyść wszystkie etykiety')
 
     args = parser.parse_args()
