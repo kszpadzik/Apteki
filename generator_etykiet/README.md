@@ -15,7 +15,7 @@
 - Otwórz Wiersz polecenia (Win + R → wpisz 'cmd')
 - Wpisz: pip install reportlab
 
-## 5. Uruchomienie programu:
+## 5. Przykładowe uruchomienie programu:
 - Wejdź do utworzonego wcześniej folderu zawierającego plik: generator_naklejek.py, np.: cd Desktop\NaklejkiApteka
 
 ```
@@ -29,6 +29,7 @@ python generator_naklejek.py --lek "0,1% sol";"Atropini sulfurici";"10 minimsów
 
 python generator_naklejek.py --lek "H20";"Woda";"płyn" --pos_start 11 --pos_koniec 15 --dr "Grześ Nowakowski" --wyk "Anna Nowak" --d "07.11.2025" --exp "30 dni" --p "lodówka""
 ```
+Jeśli chcesz edytować dane na etykiecie, pamiętaj o określeniu pozycji naklejek do jakich się odnosisz (flagi '--pos_start', '--pos_koniec')
 
 ## 6. Plik etykiety.pdf zostanie utworzony – otwórz i wydrukuj
 
@@ -36,7 +37,3 @@ python generator_naklejek.py --lek "H20";"Woda";"płyn" --pos_start 11 --pos_kon
 - Uruchom: python stickers.py --reset (resetuje on również dane poza danymi apteki w pliku "etykiety_dane.json)
 
 Gotowe! Dane do poszczególnych naklejek możesz również wpisać ręcznie w pliku etykiety_dane.json
-
-### Do poprawy:
-
-Aktualnie domyślnie przy uruchomieniu "python generator_naklejek.py", bez żadnych flag, kasują się dane z 'etykiety_dane.json', dotyczące danych zmienianych za pomocą flag (np. '--lek', '--d', '--p'). Ostatecznie przy wykonaniu wspomnianej komendy w konsoli, stworzyć się ma plik na podstawie pliku 'etykiety_dane.json' bez jego zmiany.
