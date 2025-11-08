@@ -11,12 +11,12 @@ Instrukcja: Jak używać programu do generowania naklejek
 3. Edytuj dane apteki:
 - Otwórz plik etykiety_dane.json i zmien nazwę, adres i telefon apteki (znajduje się on na końcu pliku).
 
-4. Zainstaluj bibliotekn do tworzenia PDF:
+4. Zainstaluj biblioteki do tworzenia PDF:
 - Otwórz Wiersz polecenia (Win + R → wpisz 'cmd')
 - Wpisz: pip install reportlab
 
 5. Uruchomienie programu:
-- Wejdn do folderu, np.: cd Desktop\NaklejkiApteka
+- Wejdź do folderu, np.: cd Desktop\NaklejkiApteka
 python generator_naklejek.py -h
 python generator_naklejek.py --reset
 python generator_naklejek.py --lek "0,5% sol";"Atropini sulfurici";"10 minimsów" --pos_start 1 --pos_koniec 4 --dr "Adam Dąbrowski" --wyk "Anna Nowak" --d "07.11.2025" --exp "30 dni" --p "lodówka"
